@@ -12,6 +12,9 @@ RUN curl -L -o /tmp/pdi-ce-${PDI_VERSION}.zip \
     unzip -q /tmp/pdi-ce-${PDI_VERSION}.zip -d $PDI_HOME && \
     rm /tmp/pdi-ce-${PDI_VERSION}.zip
 
+RUN wget -P $PDI_HOME/data-integration/lib http://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.35/mysql-connector-java-5.1.35.jar
+
+
 ENV PATH=$PDI_HOME/data-integration:$PATH
 
 EXPOSE 8080
